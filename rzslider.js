@@ -18,10 +18,10 @@ angular.module('rzModule', [])
   'use strict';
   var template = '<span class="rz-bar"></span>' + // 0 The slider bar
               '<span class="rz-bar rz-selection"></span>' + // 1 Highlight between two handles
-              '<span class="rz-pointer"></span>' + // 2 Left slider handle
-              '<span class="rz-pointer"></span>' + // 3 Right slider handle
-              '<span class="rz-bubble rz-limit"></span>' + // 4 Floor label
-              '<span class="rz-bubble rz-limit"></span>' + // 5 Ceiling label
+              '<span class="rz-pointer rz-lower">Min: </span>' + // 2 Left slider handle
+              '<span class="rz-pointer rz-high">Max: </span>' + // 3 Right slider handle
+              '<span class="rz-bubble rz-limit rz-left"></span>' + // 4 Floor label
+              '<span class="rz-bubble rz-limit rz-right"></span>' + // 5 Ceiling label
               '<span class="rz-bubble"></span>' + // 6 Label above left slider handle
               '<span class="rz-bubble"></span>' + // 7 Label above right slider handle
               '<span class="rz-bubble"></span>'; // 8 Range label when the slider handles are close ex. 15 - 17

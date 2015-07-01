@@ -18,16 +18,16 @@
 @handleHoverColor: #fff;
 @labelTextColor: #55637d;
 @handleBgColor: #0db9f0;
-@handleInnerColor: #fff;
+@handleInnerColor: #e9ebed;
 @limitLabelTextColor: @labelTextColor;
 @barFillColor: @handleBgColor;
 @barNormalColor: #d8e0f3;
 
 /* Slider size parameters */
-@handleSize: 32px;
-@handlePointerSize: 8px;
-@bubblePadding: 1px 3px;
-@barHeight: 4px;
+@handleSize: 20px;
+@handlePointerSize: 4px;
+@bubblePadding: 10px 30px;
+@barHeight: 2px;
 
 rzslider {
   display: inline-block;
@@ -54,7 +54,7 @@ rzslider span.rz-bar {
   width: 100%;
   height: 100%;
   z-index: 0;
-  background: @barNormalColor;
+  background: @color-blue-darkest;
   .rounded(@barHeight/2);
 }
 
@@ -70,7 +70,7 @@ rzslider span.rz-pointer {
   width: @handleSize;
   height: @handleSize;
   top: -@handleSize/2 + @barHeight/2;
-  background-color: @handleBgColor;
+  background-color: @color-blue-base;
   z-index: 2;
   .rounded(@handleSize/2);
 //  -webkit-transition:all linear 0.15s;
@@ -100,7 +100,7 @@ rzslider span.rz-pointer.rz-active:after {
 
 rzslider span.rz-bubble {
   cursor: default;
-  top: -@handleSize;
+  top: -45px;
   padding: @bubblePadding;
   color: @labelTextColor;
 }
@@ -110,5 +110,20 @@ rzslider span.rz-bubble.rz-selection {
 }
 
 rzslider span.rz-bubble.rz-limit {
+  font-size: 10px;
   color: @limitLabelTextColor;
+}
+
+span.rz-bubble.rz-limit.rz-left {
+  padding-left: 0;
+  &:before {
+    content: "Min: "
+  }
+}
+
+span.rz-bubble.rz-limit.rz-right {
+  padding-right: 0;
+  &:before {
+    content: "Max: "
+  }
 }
